@@ -10,7 +10,7 @@
 - belongs_to :user
 
 
-##messagesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -24,7 +24,7 @@
 - belongs_to :user
 
 
-##groupsテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -37,7 +37,7 @@
 - accept_nested_attributes_for :members
 
 
-##usersテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
