@@ -22,3 +22,16 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+
+##groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+- has_many :users, through::members
+- has_many :members
+- accept_nested_attributes_for :members
