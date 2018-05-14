@@ -2,7 +2,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|----|
 
 ### Association
 - has_many :messages
@@ -14,7 +14,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|name|string|null: false, unique: true, index: true|
 |email|text|null: false, unique: true|
 |password|text|null: false|
 
