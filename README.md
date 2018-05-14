@@ -28,8 +28,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -42,8 +42,8 @@
 |------|----|-------|
 |body|text|----|
 |image|text|----|
-|group_id|integer|foreign_key: true, index: true|
-|user_id|integer|foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
