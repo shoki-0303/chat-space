@@ -14,9 +14,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|----|
 |image|text|----|
-|group_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true, index: true|
 |user_id|integer|foreign_key: true|
 
 ### Association
@@ -28,11 +28,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|name|string|null: false|
 
 ### Association
 - has_many :messages
-- has_many :users, through::members
+- has_many :users, through: :members
 - has_many :members
 - accept_nested_attributes_for :members
 
@@ -47,5 +47,5 @@
 
 ### Association
 - has_many :messages
-- has_many :groups, through::members
+- has_many :groups, through: :members
 - has_many :members
