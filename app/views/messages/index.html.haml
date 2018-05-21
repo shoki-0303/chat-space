@@ -1,0 +1,27 @@
+.wrapper
+  .sidebar
+    .sidebar__top
+      %p.sidebar__top__name sakashita_rena
+      .sidebar__top__icons
+        = link_to "" do
+          %i.fa.fa-pencil-square-o
+        = link_to "" do
+          %i.fa.fa-cog
+    .sidebar__buttom
+      = render "shared/group"
+  .content
+    .content__top
+      .content__top__left
+        %p.content__top__left__groupname meiji
+        %p.content__top__left__groupmembers Members: kaesaru2000 test01 test 02
+      .content__top__right
+        %p.content__top__right__editbutton Edit
+    .content__middle
+      = render "shared/message"
+    .content__buttom
+      .form{action: "/", method: "post"}
+        %input.content__buttom__input{name: "", type: "text", placeholder: "type a message"}
+        %label.select__image
+          %input{name: "", type: "file", style: "display:none"}
+          %i.fa.fa-picture-o.fa-lg
+        %input.content__buttom__send{name: "", type: "submit", value: "Send"}

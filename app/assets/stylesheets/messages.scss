@@ -1,0 +1,175 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  .sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #253141;
+    float: left;
+
+      &__top {
+        width: 260px;
+        height: 100px;
+        padding: 0 20px;
+        background-color: #2f3e51;
+        line-height: 100px;
+
+        &__name {
+          float: left;
+          font-size: 16px;
+          font-weight: bold;
+          color: $white;
+        }
+
+        &__icons {
+          float: right;
+
+          & a {
+           text-decoration: none;
+          }
+
+          .fa {
+           color: $white;
+          }
+        }
+      }
+
+      &__buttom {
+        width: 260px;
+        height: calc(100vh - 100px);
+        padding: 0 20px;
+
+        &__group {
+          width: 260px;
+          height: 91px;
+
+          &__name {
+            font-size: 15px;
+            color: $white;
+            padding-top: 20px
+          }
+
+          &__text {
+            font-size: 11px;
+            color: $white;
+            padding-top: 5px;
+            padding-bottom: 40px;
+          }
+        }
+      }
+    }
+
+  .content {
+    width: calc(100vw - 300px);
+    height: 100vh;
+    float: right;
+
+    &__top {
+      position: fixed;
+      top: 0;
+      left: 300px;
+      width: calc(100vw - 380px);
+      background-color: $white;
+      padding: 0 40px;
+      height: 100px;
+      border-bottom: solid 1px #BDBDBD;
+
+      &__left {
+        float: left;
+
+        &__groupname {
+          padding-top: 35px;
+          font-size: 20px;
+          color: #333333;
+        }
+
+        &__groupmembers {
+          padding-top: 8px;
+          font-size: 12px;
+          color: #848484;
+        }
+      }
+
+      &__right {
+        float: right;
+
+        &__editbutton {
+          color: #38AEF0;
+          border: solid 2px $skyblue;
+          padding: 10px 20px;
+          margin-top: 28px;
+        }
+      }
+    }
+
+    &__middle {
+      width: calc(100vw - 380px);
+      padding: 0 40px;
+      height: calc(100vh - 236px);
+      background-color: #FAFAFA;
+      padding-top: 46px;
+      margin-top: 100px;
+      margin-bottom: 90px;
+
+      &__message {
+        padding-bottom: 40px;
+
+        &__name {
+          font-size: 16px;
+          font-weight: bold;
+          color: #434A54;
+          float: left;
+        }
+
+        &__time {
+          font-size: 12px;
+          color: #999999;
+          float: left;
+          margin-left: 10px;
+          padding-top: 4px;
+        }
+
+        &__text {
+          font-size: 14px;
+          color: #434A54;
+          clear: both;
+          padding-top: 10px;
+        }
+      }
+    }
+
+    &__buttom {
+      position: fixed;
+      left: 300px;
+      bottom: 0px;
+      width: calc(100vw - 380px);
+      padding: 20px 40px;
+      height: 50px;
+      background-color: #D8D8D8;
+
+      &__input {
+        height: 50px;
+        width: 88%;
+        border: 0;
+        padding: 0 10px;
+      }
+
+      .fa-picture-o {
+        position: absolute;
+        top: 42%;
+        left: 84%;
+      }
+
+      &__send {
+        height: 50px;
+        float: right;
+        background-color: $skyblue;
+        padding: 0 24px;
+        border: 0;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}
