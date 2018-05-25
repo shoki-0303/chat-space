@@ -72,14 +72,15 @@
       width: calc(100vw - 380px);
       background-color: $white;
       padding: 0 40px;
-      height: 100px;
+      height: 76px;
+      margin-top: 24px;
       border-bottom: solid 1px #BDBDBD;
 
       &__left {
         float: left;
 
         &__groupname {
-          padding-top: 35px;
+          padding-top: 11px;
           font-size: 20px;
           color: #333333;
         }
@@ -96,9 +97,9 @@
 
         &__editbutton {
           color: #38AEF0;
-          border: solid 2px $skyblue;
+          border: solid 2px $light_blue;
           padding: 10px 20px;
-          margin-top: 28px;
+          margin-top: 10px;
         }
       }
     }
@@ -164,7 +165,7 @@
       &__send {
         height: 50px;
         float: right;
-        background-color: $skyblue;
+        background-color: $light_blue;
         padding: 0 24px;
         border: 0;
         color: $white;
