@@ -1,0 +1,57 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #253141;
+  float: left;
+
+    &__top {
+      width: 260px;
+      height: 100px;
+      padding: 0 20px;
+      background-color: #2f3e51;
+      line-height: 100px;
+
+      &__name {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        color: $white;
+      }
+
+      &__icons {
+        float: right;
+
+        & a {
+         text-decoration: none;
+        }
+
+        .fa {
+         color: $white;
+        }
+      }
+    }
+
+    &__buttom {
+      width: 260px;
+      height: calc(100vh - 100px);
+      padding: 0 20px;
+
+      &__group {
+        width: 260px;
+        height: 91px;
+
+        &__name {
+          font-size: 15px;
+          color: $white;
+          padding-top: 20px
+        }
+
+        &__text {
+          font-size: 11px;
+          color: $white;
+          padding-top: 5px;
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
