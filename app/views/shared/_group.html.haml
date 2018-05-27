@@ -1,7 +1,9 @@
 .sidebar__buttom__group
-  %p.sidebar__buttom__group__name meiji
-  %p.sidebar__buttom__group__text hello!
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      %p.sidebar__buttom__group__name
+        = group.name
+      %p.sidebar__buttom__group__text
+        メッセージはまだありません。
 
-.sidebar__buttom__group
-  %p.sidebar__buttom__group__name osaka
-  %p.sidebar__buttom__group__text こんにちは!
+
