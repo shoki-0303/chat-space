@@ -1,9 +1,8 @@
-.content__middle__message
-  %p.content__middle__message__name sakashita_rena
-  %p.content__middle__message__time 2018/05/22 12:38:40
-  %p.content__middle__message__text happy birthday!
-
-.content__middle__message
-  %p.content__middle__message__name shoki_ohta
-  %p.content__middle__message__time 2018/05/22 12:38:40
-  %p.content__middle__message__text Thank you!
+%p.content__middle__message__name
+  = message.user.name
+%p.content__middle__message__time
+  = message.created_at
+- if message.content.present?
+  %p.content__middle__message__text
+    = message.content
+= image_tag message.image.url, class: 'lower-message__image' if message.image.present?

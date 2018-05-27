@@ -1,5 +1,7 @@
 .wrapper
 
+  = render 'shared/sidebar'
+
   .content
     .content__top
       .content__top__left
@@ -8,11 +10,14 @@
       .content__top__right
         %p.content__top__right__editbutton Edit
     .content__middle
-      = render "shared/message"
+      .content__middle__message
+        = render partial: 'shared/message', collection: @messages
     .content__buttom
-      .form{action: "/", method: "post"}
-        %input.content__buttom__input{name: "", type: "text", placeholder: "type a message"}
-        %label.select__image
-          %input{name: "", type: "file", style: "display:none"}
-          %i.fa.fa-picture-o.fa-lg
-        %input.content__buttom__send{name: "", type: "submit", value: "Send"}
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
