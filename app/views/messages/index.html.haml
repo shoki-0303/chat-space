@@ -14,8 +14,8 @@
         = render partial: 'shared/message', collection: @messages
     .content__buttom
       .form
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = form_for [@group, @message], html: {id: 'js-form'} do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message', id: 'js-textfield'
           .form__mask
             = f.label :image, class: 'form__mask__image' do
               = fa_icon 'picture-o', class: 'icon'
