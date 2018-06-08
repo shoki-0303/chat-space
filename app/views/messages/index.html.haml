@@ -10,7 +10,7 @@
       .content__top__right
         %p.content__top__right__editbutton Edit
     .content__middle
-      .content__middle__message{ data: { id: "#{ @message.id }" } }
+      %ul.content__middle__message
         = render partial: 'shared/message', collection: @messages
     .content__buttom
       .form

@@ -1,18 +1,24 @@
 $(function() {
 
   function append_message(message) {
-    var html =    `<div data-id="${message.id}">
-                    <p class="content__middle__message__name">
+
+    var image_html = (message.image_url) ? `<li class="image"><img src=${message.image_url} class="lower-message__image"></li>` : ""
+
+
+    var html =   `<ul class="message">
+                    <li class="content__middle__message__name">
                      ${ message.user_name }
-                    </p>
-                    <p class="content__middle__message__time">
+                    </li>
+                    <li class="content__middle__message__time">
                      ${ message.created_at }
-                    </p>
-                    <p class="content__middle__message__text">
+                    </li>
+                    <li class="content__middle__message__text">
                      ${ message.content }
-                    </p>
-                   </div>`
+                    </li>
+                    ${ image_html }
+                  </ul>`
     $('.content__middle__message').append(html);
+
   }
 
 
@@ -33,6 +39,9 @@ $(function() {
       $('#js-form')[0].reset();
       $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
       $('.form__submit').prop("disabled", false);
+    })
+    .fail(function(){
+      alert('error');
     })
   });
 });
