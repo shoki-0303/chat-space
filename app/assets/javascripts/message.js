@@ -3,7 +3,7 @@ $(function() {
   function append_message(message) {
     var html =    `<div data-id="${message.id}">
                     <p class="content__middle__message__name">
-                     ${ message.user.name }
+                     ${ message.user_name }
                     </p>
                     <p class="content__middle__message__time">
                      ${ message.created_at }
@@ -19,22 +19,21 @@ $(function() {
   $("#js-form").on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr("action");
-
+    var url = $(this).attr('action')
     $.ajax({
-      type: 'POST',
       url: url,
+      type: "post",
+      data: formData,
       dataType: 'json',
-      data: 'formData',
       processData: false,
       contentType: false
     })
-
-    .done(function(date) {
-      append_message(data.message);
-      $(".content__middle__message").animate({scrollTop:$('.content__buttom').offset().top});
+    .done(function(data) {
+      append_message(data);
       $('#js-form')[0].reset();
+      $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
+      $('.form__submit').prop("disabled", false);
     })
   });
-})
+});
 
