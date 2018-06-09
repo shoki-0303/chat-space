@@ -53,11 +53,17 @@
 
       &__message {
 
+        .message {
+          padding-top: 30px;
+          padding-bottom: 10px;
+        }
+
         &__name {
           font-size: 16px;
           font-weight: bold;
           color: #434A54;
           float: left;
+          margin-bottom: 10px;
         }
 
         &__time {
@@ -72,8 +78,7 @@
           font-size: 14px;
           color: #434A54;
           clear: both;
-          padding-top: 10px;
-          padding-bottom: 40px;
+          padding-bottom: 10px;
         }
 
         .image {
@@ -84,12 +89,10 @@
           height: 200px;
           width: 400px;
           padding-top: 10px;
-          padding-bottom: 40px;
+          padding-bottom: 10px;
         }
       }
     }
-
-
 
     &__buttom {
       width: calc(100vw - 380px);
@@ -105,7 +108,6 @@
           padding:0 10px;
           width: calc(100% - 130px);
           font-size: 15px;
-
 
         }
       .form__mask{

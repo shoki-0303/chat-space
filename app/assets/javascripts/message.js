@@ -1,10 +1,6 @@
 $(function() {
-
   function append_message(message) {
-
     var image_html = (message.image_url) ? `<li class="image"><img src=${message.image_url} class="lower-message__image"></li>` : ""
-
-
     var html =   `<ul class="message">
                     <li class="content__middle__message__name">
                      ${ message.user_name }
@@ -18,11 +14,9 @@ $(function() {
                     ${ image_html }
                   </ul>`
     $('.content__middle__message').append(html);
-
   }
 
-
-  $("#js-form").on('submit', function(e) {
+  $("#new_message").on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -36,7 +30,7 @@ $(function() {
     })
     .done(function(data) {
       append_message(data);
-      $('#js-form')[0].reset();
+      $('#new_message')[0].reset();
       $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
       $('.form__submit').prop("disabled", false);
     })
