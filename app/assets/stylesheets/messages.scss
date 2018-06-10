@@ -53,11 +53,17 @@
 
       &__message {
 
+        .message {
+          padding-top: 30px;
+          padding-bottom: 10px;
+        }
+
         &__name {
           font-size: 16px;
           font-weight: bold;
           color: #434A54;
           float: left;
+          margin-bottom: 10px;
         }
 
         &__time {
@@ -72,13 +78,21 @@
           font-size: 14px;
           color: #434A54;
           clear: both;
+          padding-bottom: 10px;
+        }
+
+        .image {
+          clear: both;
+        }
+
+        .lower-message__image {
+          height: 200px;
+          width: 400px;
           padding-top: 10px;
-          padding-bottom: 40px;
+          padding-bottom: 10px;
         }
       }
     }
-
-
 
     &__buttom {
       width: calc(100vw - 380px);
@@ -95,13 +109,16 @@
           width: calc(100% - 130px);
           font-size: 15px;
 
-
         }
       .form__mask{
         background-color: #fff;
         float:left;
         height: 50px;
         padding-right: 10px;
+
+        .fa.fa-picture-o.icon{
+          padding-top: 17px;
+        }
       }
       .hidden{
         display: none;

@@ -1,8 +1,10 @@
-%p.content__middle__message__name
-  = message.user.name
-%p.content__middle__message__time
-  = message.created_at
-- if message.content.present?
-  %p.content__middle__message__text
-    = message.content
-= image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+%ul.message
+  %li.content__middle__message__name
+    = message.user.name
+  %li.content__middle__message__time
+    = message.created_at
+  - if message.content.present?
+    %li.content__middle__message__text
+      = message.content
+  %li.image
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
