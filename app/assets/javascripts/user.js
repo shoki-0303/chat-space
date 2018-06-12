@@ -18,10 +18,10 @@ $(function(){
     user_list.append(html);
   }
 
-  function appendUserResult(user_id, user_name) {
+  function appendUserResult(userId, userName) {
     var html =    `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                     <input name='group[user_ids][]' type='hidden' value='${user_id}'>
-                     <p class='chat-group-user__name'>${user_name}</p>
+                     <input name='group[user_ids][]' type='hidden' value='${userId}'>
+                     <p class='chat-group-user__name'>${userName}</p>
                      <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                    </div>`
     added_user_list.append(html);
@@ -54,35 +54,11 @@ $(function(){
     }
   });
   $("#user-search-result").on("click", ".chat-group-user__btn--add", function(){
-    var user_id = $(this).data('user-id');
-    var user_name = $(this).data('user-name');
-    var html = appendUserResult(user_id, user_name);
+    var userId = $(this).data('user-id');
+    var userName = $(this).data('user-name');
+    var html = appendUserResult(userId, userName);
   });
   $("#chat-group-users").on("click", ".chat-group-user__btn--remove", function(){
     $(this).parent().remove();
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
