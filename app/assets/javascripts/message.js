@@ -73,16 +73,14 @@ $(function() {
         dataType: 'json'
       })
       .done(function(data){
-        console.log("done")
         data.forEach(function(data) {
           updateHTML(data);
-          console.log("done")
         });
       })
       .fail(function(){
         alert('自動更新に失敗しました');
       })
-      $('.content__middle__message').animate({scrollTop: $('.content__middle__message')[0].scrollHeight}, 'slow');
+      $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
     }
   }
 });
