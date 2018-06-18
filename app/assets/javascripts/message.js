@@ -65,6 +65,7 @@ $(function() {
 
   function update() {
     var message_id = $('.message:last').data('id');
+    console.log(message_id)
     if (location.href.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
         url: location.href,
@@ -75,12 +76,12 @@ $(function() {
       .done(function(data){
         data.forEach(function(data) {
           updateHTML(data);
+          $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
         });
       })
       .fail(function(){
         alert('自動更新に失敗しました');
       })
-      $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
     }
   }
 });
