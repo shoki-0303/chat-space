@@ -1,4 +1,8 @@
 $(function() {
+
+  function scroll() {
+    $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
+  }
   function append_message(message) {
     var image_html = (message.image_url) ? `<li class="image"><img src=${message.image_url} class="lower-message__image"></li>` : ""
     var html =   `<ul class="message" data-id="${message.id}">
@@ -31,7 +35,7 @@ $(function() {
     .done(function(data) {
       append_message(data);
       $('#new_message')[0].reset();
-      $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
+      scroll()
       $('.form__submit').prop("disabled", false);
     })
     .fail(function(){
@@ -65,8 +69,7 @@ $(function() {
 
   function update() {
     var message_id = $('.message:last').data('id');
-    console.log(message_id)
-    if (location.href.match(/\/groups\/\d+\/messages/)) {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
       $.ajax({
         url: location.href,
         type: 'GET',
@@ -76,8 +79,8 @@ $(function() {
       .done(function(data){
         data.forEach(function(data) {
           updateHTML(data);
-          $('.content__middle').animate({scrollTop: $('.content__middle')[0].scrollHeight});
-        });
+          scroll()
+       });
       })
       .fail(function(){
         alert('自動更新に失敗しました');
