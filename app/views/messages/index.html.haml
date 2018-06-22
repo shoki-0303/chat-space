@@ -5,8 +5,11 @@
   .content
     .content__top
       .content__top__left
-        %p.content__top__left__groupname Meiji
-        %p.content__top__left__groupmembers Members: kaesaru2000 test01 test 02
+        %p.content__top__left__groupname
+          = @group.name
+        %p.content__top__left__groupmembers
+          - @users.each do |user|
+            = user.name
       .content__top__right
         %p.content__top__right__editbutton Edit
     .content__middle
