@@ -20,3 +20,4 @@
 *.jpeg
 *.png
 *.gif
+config/secrets.yml
