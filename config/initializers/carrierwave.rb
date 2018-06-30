@@ -12,12 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  case Rails.env
-  when 'production'
-      config.fog_directory  = 'chat-space-shoki'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-shoki'
-  when 'development'
-      config.fog_directory  = 'chat-space-shoki'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-shoki'
-  end
+  config.fog_directory  = 'chat-space-shoki'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-shoki'
 end
